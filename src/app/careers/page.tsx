@@ -44,7 +44,7 @@ export default async function CareersPage() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-200 bg-[#0b3579]/3 rounded-full blur-[120px] -z-10 pointer-events-none" />
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-light leading-[1.05] tracking-tight text-black mb-8 font-serif italic">
+          <h1 className="text-5xl md:text-7xl font-light leading-[1.05] tracking-tight text-black mb-8 font-serif ">
             Architecting <br className="hidden md:block" />
             <span className="text-[#0b3579] font-light">Era Of Innovation.</span>
           </h1>

@@ -209,7 +209,7 @@ export default function CandidateBoard({ initialCandidates, strapiUrl }: { initi
                             {questionId.replace(/([A-Z])/g, ' $1').trim()}
                           </p>
                           <p className="text-[#11192b] text-[15px] font-light leading-relaxed">
-                            {answer as string || <span className="italic opacity-40">No response provided</span>}
+                            {answer as string || <span className=" opacity-40">No response provided</span>}
                           </p>
                         </div>
                       ))}
@@ -219,7 +219,7 @@ export default function CandidateBoard({ initialCandidates, strapiUrl }: { initi
                       <svg className="w-8 h-8 text-[#11192b]/20 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                       </svg>
-                      <p className="text-sm text-[#11192b]/40 font-light italic">No dynamic questions answered.</p>
+                      <p className="text-sm text-[#11192b]/40 font-light ">No dynamic questions answered.</p>
                     </div>
                   )}
                 </div>

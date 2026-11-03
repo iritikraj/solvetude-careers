@@ -49,7 +49,7 @@ export default async function HRDashboard() {
         {/* --- PREMIUM HEADER --- */}
         <header className="mb-12 flex flex-col md:flex-row md:justify-between md:items-end gap-6 pb-8">
           <div className="max-w-xl">
-            <h1 className="text-5xl md:text-6xl leading-[1.05] tracking-tight mb-3 font-serif italic">
+            <h1 className="text-5xl md:text-6xl leading-[1.05] tracking-tight mb-3 font-serif ">
               Applicant <span className='text-[#0b3579] font-serif'>Tracking</span>
             </h1>
             <p className="text-lg font-light text-[#11192b]/60 leading-relaxed">

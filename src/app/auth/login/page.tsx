@@ -52,7 +52,7 @@ function LoginForm() {
         <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white border border-[#14181F]/5 shadow-sm text-[#0b3579] mb-6">
           <Lock size={20} strokeWidth={1.5} />
         </div>
-        <h1 className="text-4xl md:text-5xl font-light leading-[1.05] tracking-tight text-[#14181F] mb-4 font-serif italic">
+        <h1 className="text-4xl md:text-5xl font-light leading-[1.05] tracking-tight text-[#14181F] mb-4 font-serif ">
           Recruiter&nbsp;
           <span className="text-[#0b3579] font-light">Access.</span>
         </h1>

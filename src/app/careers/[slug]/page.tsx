@@ -106,7 +106,7 @@ export default async function JobDetailsPage({ params }: { params: Promise<{ slu
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-medium font-serif italic tracking-tight leading-[1.05] text-[#14181F]">
+          <h1 className="text-4xl md:text-5xl font-medium font-serif  tracking-tight leading-[1.05] text-[#14181F]">
             {title}
           </h1>
         </div>

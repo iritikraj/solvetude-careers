@@ -82,7 +82,7 @@ export default function EditJobClient({ documentId, initialData }: { documentId:
             Back to Job Post
           </Link>
 
-          <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-3 font-serif italic">
+          <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-3 font-serif ">
             Modify <span className="text-[#0b3579] font-serif">Listing.</span>
           </h1>
           <p className="text-lg font-light text-[#11192b]/60 leading-relaxed max-w-2xl">

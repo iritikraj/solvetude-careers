@@ -66,7 +66,7 @@ export default function CreateJobPage() {
             <span className="text-[11px] uppercase tracking-[0.2em] font-semibold">Back to Dashboard</span>
           </Link>
 
-          <h1 className="text-4xl md:text-6xl tracking-tight mb-3 font-serif italic">
+          <h1 className="text-4xl md:text-6xl tracking-tight mb-3 font-serif ">
             List Job
           </h1>
           <p className="text-lg font-light text-[#11192b]/60 leading-relaxed max-w-2xl">
