@@ -50,7 +50,7 @@ export default async function Navbar() {
               href="/auth/login"
               className="group inline-flex items-center gap-3 rounded-full border border-white/20 bg-transparent px-6 py-2.5 text-[11px] font-semibold uppercase tracking-[0.15em] text-white transition-all hover:border-white hover:bg-white hover:text-[#0f2953]"
             >
-              Recruiter Login
+              Rec. Login
               <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
             </Link>
           )}
