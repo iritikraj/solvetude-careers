@@ -74,11 +74,11 @@ export default async function HRDashboard() {
         <CandidateBoard initialCandidates={candidates} strapiUrl={strapiUrl} />
       </div>
 
-      {/* 
+
       <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-[#11192b]/5">
         <LinkedInImporter activeJobs={activeJobs} />
-      </div> 
-      */}
+      </div>
+
     </div>
   );
 }

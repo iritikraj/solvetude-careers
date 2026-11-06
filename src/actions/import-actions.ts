@@ -26,21 +26,38 @@ export async function importLinkedInCandidates(formData: FormData) {
 
     // Loop through each row and push to Strapi
     for (const row of candidates) {
-      // Map LinkedIn's standard CSV export column names to our Strapi schema
+
+      // 1. Handle Name Splitting
+      const rawName = (row['Name'] || row['First Name'] || '').trim();
+      const nameParts = rawName.split(' ');
+      const firstName = nameParts[0] || 'Unknown';
+      const lastName = row['Last Name'] || nameParts.slice(1).join(' ') || '';
+
+      // 2. Extract email and LinkedIn URL so they are in scope for error logging
+      const email = row['Email'] || row['Email Address'] || '';
+      const linkedinUrl = row['LinkedIn'] || row['Member Profile'] || row['Profile URL'] || '';
+
+      // 3. Map payload dynamically
       const payload = {
         data: {
-          firstName: row['First Name'] || row['first_name'] || 'Unknown',
-          lastName: row['Last Name'] || row['last_name'] || '',
-          email: row['Email Address'] || row['email'] || '',
-          linkedinUrl: row['Member Profile'] || row['Profile URL'] || row['linkedin_url'] || '',
-          source: 'Linkedin',
+          firstName,
+          lastName,
+          email,
+          linkedinUrl,
+          source: 'LinkedIn',
           candidateStatus: 'New',
           job_posts: [parseInt(jobId)],
-          // Save the rest of the raw LinkedIn data into the dynamic answers JSON just in case
+
+          // Inject all the rich LinkedIn data into the HR dashboard's dynamic answers view
           dynamicAnswers: {
-            headline: row['Headline'] || '',
-            location: row['Location'] || '',
-            applicationDate: row['Application Date'] || ''
+            Phone: row['Phone'] || 'Not provided',
+            Headline: row['Subtitles'] || row['Headline'] || '',
+            Current_Role: row['Current Position'] ? `${row['Current Position']} at ${row['Current Company']}` : '',
+            Experience_Years: row['Experience Years'] || '',
+            Location: row['Location'] || row['Geo Location Name'] || '',
+            Education: row['Education'] || '',
+            Experience_Details: row['Experience Details'] || '',
+            LinkedIn_Resume_Link: row['CV Download URL'] || 'No resume attached in LinkedIn'
           }
         }
       };
@@ -57,7 +74,8 @@ export async function importLinkedInCandidates(formData: FormData) {
       if (res.ok) {
         importedCount++;
       } else {
-        console.error("Failed to import candidate:", await res.json());
+        const errorData = await res.json();
+        console.error(`Failed to import candidate ${email}:`, errorData);
       }
     }
 
