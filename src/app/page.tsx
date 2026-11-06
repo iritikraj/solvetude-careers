@@ -5,81 +5,11 @@ import { ArrowRight, MapPin, Heart, Laptop, Users, MoveRight } from "lucide-reac
 import Image from "next/image";
 import Link from "next/link";
 
-// Infinite Marquee Component
-const Marquee = () => {
-  const departments = [
-    "ENGINEERING",
-    "DESIGN",
-    "PRODUCT",
-    "OPERATIONS",
-    "MARKETING",
-    "SALES",
-  ];
-
-  const repeatedDepartments = [...departments, ...departments];
-
-  return (
-    <section className="relative w-full overflow-hidden py-16 md:py-20 -mt-10 md:-mt-16">
-
-      {/* Subtle background */}
-      <div className="absolute inset-0 bg-[#f8fafc]" />
-
-      {/* Marquee strip */}
-      <div className="relative w-full overflow-hidden bg-[#102747] py-5 md:py-7">
-
-        <div className="animate-marquee flex w-max items-center whitespace-nowrap">
-
-          {repeatedDepartments.map((dept, idx) => (
-            <div
-              key={idx}
-              className="flex items-center gap-8 md:gap-12 px-6 md:px-10"
-            >
-              <span className="text-white/90 text-xl sm:text-2xl md:text-3xl font-semibold tracking-[0.12em]">
-                {dept}
-              </span>
-
-              <span className="h-1.5 w-1.5 rounded-full bg-[#8da8c7]" />
-            </div>
-          ))}
-
-        </div>
-      </div>
-
-      <style>{`
-        @keyframes marquee {
-          from {
-            transform: translateX(0);
-          }
-          to {
-            transform: translateX(-50%);
-          }
-        }
-
-        .animate-marquee {
-          animation: marquee 45s linear infinite;
-        }
-
-        .animate-marquee:hover {
-          animation-play-state: paused;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .animate-marquee {
-            animation: none;
-          }
-        }
-      `}</style>
-
-    </section>
-  );
-};
-
-
 export default function HomePage() {
   return (
-    <div className="w-full min-h-screen bg-[#FAFAFA] font-sans text-[#111111] selection:bg-[#0b3579] selection:text-white">
+    <div className="w-full min-h-screen font-sans text-[#111111] selection:bg-[#0b3579] selection:text-white">
 
-      <section className="relative isolate min-h-[100vh] md:min-h-screen w-full flex flex-col justify-center px-6 lg:px-12 pb-0 overflow-hidden bg-white">
+      <section className="relative isolate min-h-screen md:min-h-screen w-full flex flex-col justify-center px-6 lg:px-12 pb-0 overflow-hidden">
 
         {/* Next.js Image Component - Anchored strictly to the bottom */}
         <div
@@ -137,11 +67,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ================= 2. INFINITE TICKER ================= */}
-      <Marquee />
-
       {/* ================= 3. LIFE AT THE COMPANY (Bento Box Grid - Apple Style) ================= */}
-      <section className="py-32 px-6 lg:px-12 max-w-350 mx-auto">
+      <section className="pb-32 pt-24 px-6 lg:px-12 max-w-350 mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
